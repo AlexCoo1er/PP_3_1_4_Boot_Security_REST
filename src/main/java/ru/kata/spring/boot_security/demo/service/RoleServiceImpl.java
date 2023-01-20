@@ -9,7 +9,7 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
-@Transactional
+
 public class RoleServiceImpl implements RoleService {
 
     private final RoleDao roleDao;
@@ -29,11 +29,13 @@ public class RoleServiceImpl implements RoleService {
     }
 
     @Override
+    @Transactional
     public void deleteRole(int id) {
         roleDao.deleteRole(id);
     }
 
     @Override
+    @Transactional
     public void editRole(Role role) {
         roleDao.editRole(role);
     }
@@ -44,6 +46,7 @@ public class RoleServiceImpl implements RoleService {
     }
 
     @Override
+    @Transactional
     public void addRole(Role role) {
         roleDao.addRole(role);
     }
